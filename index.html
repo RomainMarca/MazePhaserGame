@@ -1,0 +1,30 @@
+<!-- Exo JS, Phaser sur : https://developer.mozilla.org/fr/docs/Games/Workflows/HTML5_Gamedev_Phaser_Device_Orientation_FR -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Cyber ORB demo</title>
+        <style> body { margin: 0; background: #333; } </style>
+        <script src="src/phaser-arcade-physics.2.2.2.min.js"></script>
+        <script src="src/Boot.js"></script>
+        <script src="src/Preloader.js"></script>
+        <script src="src/MainMenu.js"></script>
+        <script src="src/Howto.js"></script>
+        <script src="src/Game.js"></script>
+    </head>
+
+    <body>
+        <script>
+        (function() {
+            let game = new Phaser.Game(320, 480, Phaser.CANVAS, 'game');
+            game.state.add('Boot', ball.boot);
+            game.state.add('Preloader', Ball.Preloader);
+            game.state.add('MainMenu', Ball.MainMenu);
+            game.state.add('Howto', Ball.Howto);
+            game.state.add('Game', Ball.Game);
+            game.state.start('Boot');
+        })();
+        </script>
+    </body>
+</html>
